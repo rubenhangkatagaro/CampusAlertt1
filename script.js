@@ -439,7 +439,7 @@ if (photoInput) {
             return;
         }
 
-        if (file.size > 1024 * 1024) {
+        if (file.size > 6000 * 4000) {
             alert("The image must be 1 MB or smaller.");
             this.value = "";
             return;
