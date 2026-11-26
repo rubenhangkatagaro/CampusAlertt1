@@ -703,3 +703,25 @@ function refreshPage() {
 if (page === "student" || page === "admin") {
     refreshPage();
 }
+/* =========================================
+   SHOW / HIDE PASSWORD
+========================================= */
+
+document.addEventListener("click", function(event) {
+    const button = event.target.closest(".toggle-password");
+
+    if (!button) return;
+
+    const inputId = button.dataset.togglePassword;
+    const passwordInput = document.getElementById(inputId);
+
+    if (!passwordInput) return;
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        button.textContent = "🙈";
+    } else {
+        passwordInput.type = "password";
+        button.textContent = "👁";
+    }
+});
